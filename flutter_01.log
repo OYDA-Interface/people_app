@@ -1,0 +1,75 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run --machine --start-paused -d chrome --devtools-server-address http://127.0.0.1:9100/ --target /Users/oheneba/Documents/Capstone/people_app/config/table.dart
+
+## exception
+
+HttpException: HttpException: Connection closed before full header was received, uri = http://localhost:51477/json
+
+```
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel master, 3.24.0-1.0.pre.152, on macOS 14.2 23C64 darwin-arm64, locale en-GB)
+    • Flutter version 3.24.0-1.0.pre.152 on channel master at /Users/oheneba/development/flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision 0a1d550e5f (9 days ago), 2024-07-17 22:06:13 +0800
+    • Engine revision 18eefacce1
+    • Dart version 3.6.0 (build 3.6.0-48.0.dev)
+    • DevTools version 2.37.1
+
+[✗] Android toolchain - develop for Android devices
+    ✗ Unable to locate Android SDK.
+      Install Android Studio from: https://developer.android.com/studio/index.html
+      On first launch it will assist you in installing the Android SDK components.
+      (or visit https://flutter.dev/to/macos-android-setup for detailed instructions).
+      If the Android SDK has been installed to a custom location, please use
+      `flutter config --android-sdk` to update to that location.
+
+
+[✓] Xcode - develop for iOS and macOS (Xcode 15.4)
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • Build 15F31d
+    • CocoaPods version 1.15.2
+
+[✓] Chrome - develop for the web
+    • Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+[✓] Android Studio (version 2023.3)
+    • Android Studio at /Applications/Android Studio.app/Contents
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 17.0.10+0-17.0.10b1087.21-11572160)
+
+[✓] IntelliJ IDEA Ultimate Edition (version 2023.2)
+    • IntelliJ at /Applications/IntelliJ IDEA.app
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+
+[✓] VS Code (version 1.91.1)
+    • VS Code at /Applications/Visual Studio Code.app/Contents
+    • Flutter extension version 3.92.0
+
+[✓] Connected device (3 available)
+    • macOS (desktop)                 • macos                 • darwin-arm64   • macOS 14.2 23C64 darwin-arm64
+    • Mac Designed for iPad (desktop) • mac-designed-for-ipad • darwin         • macOS 14.2 23C64 darwin-arm64
+    • Chrome (web)                    • chrome                • web-javascript • Google Chrome 127.0.6533.72
+    ! Error: Browsing on the local area network for Tracy’s iPhone. Ensure the device is unlocked and attached with a cable or associated with the same local area network as this Mac.
+      The device must be opted into Developer Mode to connect wirelessly. (code -27)
+    ! Error: Browsing on the local area network for Oheneba. Ensure the device is unlocked and attached with a cable or associated with the same local area network as this Mac.
+      The device must be opted into Developer Mode to connect wirelessly. (code -27)
+
+[✓] Network resources
+    • All expected network resources are available.
+
+! Doctor found issues in 1 category.
+```

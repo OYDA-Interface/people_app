@@ -1,0 +1,4 @@
+# Created by `oydacli create`
+
+.dart_tool/
+.env
