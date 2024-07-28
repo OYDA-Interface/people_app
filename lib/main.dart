@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:oydadb/oydadb.dart';
 import 'package:oydadb/src/oyda_interface.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:validators/validators.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -108,18 +109,21 @@ class _PeoplePageState extends State<PeoplePage> {
             ),
             ElevatedButton(
               onPressed: () async {
+                String firstName = _firstnameController.text;
+                String lastName = _lastnameController.text;
+                String role = _roleController.text;
+
+                if (!isAlpha(firstName) || !isAlpha(lastName) || isNull(role)) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Please enter valid details')),
+                  );
+                  return;
+                }
+
                 if (isEdit) {
-                  await _updatePerson(
-                    _firstnameController.text,
-                    _lastnameController.text,
-                    _roleController.text,
-                  );
+                  await _updatePerson(firstName, lastName, role);
                 } else {
-                  await _addPerson(
-                    _firstnameController.text,
-                    _lastnameController.text,
-                    _roleController.text,
-                  );
+                  await _addPerson(firstName, lastName, role);
                 }
                 Navigator.pop(context);
                 setState(() {}); // Refresh the list
@@ -167,8 +171,8 @@ class _PeoplePageState extends State<PeoplePage> {
                   leading: CircleAvatar(
                     child: Text(firstname[0]),
                   ),
-                  title:
-                      Text(name, style: TextStyle(fontWeight: FontWeight.bold)),
+                  title: Text(name,
+                      style: const TextStyle(fontWeight: FontWeight.bold)),
                   subtitle: Text(role),
                   trailing: Row(
                     mainAxisSize: MainAxisSize.min,
